@@ -1,0 +1,50 @@
+.card {
+  margin: 0 40px;
+}
+
+.item:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.item a {
+  margin-top: 15px;
+}
+
+.item {
+  width: 550px;
+  display: block;
+  padding: 50px 20px 30px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  box-sizing: border-box;
+  border: 1px solid rgba(236, 187, 255, 0.55);
+  border-radius: 20px;
+  height: 270px;
+}
+.example-button-row {
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.container-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  margin: 0 50px;
+}
+.dop {
+  display: block;
+  width: 400px;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.mat-toolbar {
+  margin: 0 auto;
+}
+
+.indents {
+  padding-top: 15px;
+  display: block;
+}

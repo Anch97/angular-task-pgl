@@ -2,8 +2,12 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
+import { Environment } from "./interface";
+
+export const environment: Environment = {
+  production: false,
+  xApiKey: 'zEiAS4E5pE3mFnaqIKn3s6kCxsgqHCKH9VB97I0f',
+  jobsUrl: 'https://api.lot.com/hr/v3/offers/list/pl'
 };
 
 /*

@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <a mat-flat-button (click)="getJobOffers()" class="mat-toolbar" target="_blank" color="primary">
+    <h1>{{ headerTitle | uppercase }}</h1>
+  </a>
+</mat-toolbar>
+
+<main class="example-button-row">
+  <mat-card class="card">
+
+    <button *ngIf="!viewJobs" mat-raised-button color="primary" (click)="getJobOffers()">View job offers</button>
+
+    <mat-form-field *ngIf="apiData.count" class="example-full-width dop" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Type job title" [(ngModel)]="searchStr">
+    </mat-form-field>
+
+    <div *ngIf="apiData.count" class="container-wrapper">
+      <div class="container" *ngFor="let job of apiData.jobs | searchJobs: searchStr">
+        <div class="item">
+          <mat-card-title>{{ job.title }}</mat-card-title>
+          <mat-card-subtitle><span class="indents">Category: {{ job.category }}</span></mat-card-subtitle>
+          <mat-card-subtitle><span class="indents">Location: {{ job.location }}</span></mat-card-subtitle>
+          <a mat-raised-button color="primary" href="{{job.url}}" target="_blank">Go to offer</a>
+        </div>
+      </div>
+    </div>
+
+  </mat-card>
+</main>
