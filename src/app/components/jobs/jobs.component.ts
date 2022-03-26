@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Jobs } from 'src/app/interfaces/job.interface';
 import { JobsService } from 'src/app/services/jobs.service';
 
 @Component({
@@ -8,18 +10,13 @@ import { JobsService } from 'src/app/services/jobs.service';
 })
 export class JobsComponent {
 
-  apiData: any = [];
+  apiData: Observable<Jobs> = this.jobsService.getAllJobs();
   searchStr: string = '';
-  viewJobs: boolean = false;
-  headerTitle: string = 'LOT Job Offers';
+  headerTitle: string = 'LOT Polish Airlines - Job Offers';
 
-  constructor(private jobsService: JobsService) {
-  }
+  constructor(private jobsService: JobsService) {}
 
-  getJobOffers() {
-    this.jobsService.getAllJobs().subscribe(res => {
-      this.apiData = res;
-      this.viewJobs = true;
-    }, () => this.viewJobs = false);
+  reloadPage() {
+    location.reload();
   }
 }

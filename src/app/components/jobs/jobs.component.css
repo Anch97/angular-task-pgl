@@ -35,7 +35,7 @@
 }
 .dop {
   display: block;
-  width: 400px;
+  width: 500px;
   text-align: center;
   margin: 15px auto;
 }
@@ -47,4 +47,8 @@
 .indents {
   padding-top: 15px;
   display: block;
+}
+
+.spinner {
+  margin: 0 auto;
 }
