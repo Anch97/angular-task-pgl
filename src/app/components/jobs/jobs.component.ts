@@ -12,11 +12,6 @@ export class JobsComponent {
 
   apiData: Observable<Jobs> = this.jobsService.getAllJobs();
   searchStr: string = '';
-  headerTitle: string = 'LOT Polish Airlines - Job Offers';
 
   constructor(private jobsService: JobsService) {}
-
-  reloadPage() {
-    location.reload();
-  }
 }

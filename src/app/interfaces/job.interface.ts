@@ -1,5 +1,4 @@
 export interface Job {
-  id: number;
   title: string;
   data: Date;
   category: string[];

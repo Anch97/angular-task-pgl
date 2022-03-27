@@ -1,0 +1,21 @@
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.card-about {
+  width: 1000px;
+  margin: 50px auto;
+}
+.item {
+  padding: 40px 60px;
+}
+.item:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.row {
+  font-size: 16px;
+}
+.content {
+  text-align: justify;
+  line-height: 25px;
+}

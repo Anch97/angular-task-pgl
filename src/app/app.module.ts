@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app.routing';
+import { AboutComponent } from './components/about/about.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchPipe } from './pipes/search.pipe';
@@ -17,13 +19,15 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     JobsComponent,
-    SearchPipe
+    SearchPipe,
+    AboutComponent
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule,
     MatCardModule,
     MatButtonModule,
     MatProgressSpinnerModule,

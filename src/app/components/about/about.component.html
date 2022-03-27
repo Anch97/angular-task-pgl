@@ -1,0 +1,11 @@
+<main class="card-about">
+  <mat-card class="item">
+      <mat-card-title class="title">{{ infoJob.title }}</mat-card-title>
+      <mat-card-subtitle><p class="row"><strong>Category: </strong>{{ infoJob.category }}</p></mat-card-subtitle>
+      <mat-card-subtitle><p class="row"><strong>Region: </strong>{{ infoJob.region }}</p></mat-card-subtitle>
+      <mat-card-subtitle><p class="row"><strong>Location: </strong>{{ infoJob.location }}</p></mat-card-subtitle>
+      <mat-card-subtitle><p class="row"><strong>Date: </strong>{{ infoJob.date | date:'dd.MM.yyyy' }}</p></mat-card-subtitle>
+      <mat-card-content><p class="row content"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolorum perspiciatis quisquam, qui voluptate facere? Aut quasi consequatur est aliquam, natus molestiae aspernatur architecto debitis provident sed ullam adipisci inventore in beatae, sit quos odio consequuntur. Excepturi dolorem nulla, id nisi corporis et non nemo consequatur possimus. Magni sed unde delectus quasi veritatis quo repellendus eaque debitis nulla, officia cupiditate doloremque quis? Blanditiis veniam, in quis ut tempore dolor earum? Beatae repellat quas perferendis numquam debitis officia pariatur eaque doloremque placeat nisi quaerat, est cumque ea veniam, ex magni corrupti nesciunt laboriosam nulla iure soluta? Beatae reprehenderit perspiciatis ut illo!</p></mat-card-content>
+      <a mat-raised-button color="primary" href="{{ infoJob.url }}" target="_blank">Go to offer</a>
+  </mat-card>
+</main>

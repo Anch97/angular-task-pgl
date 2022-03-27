@@ -1,28 +1,18 @@
-<mat-toolbar color="primary">
-  <a mat-flat-button (click)="reloadPage()" class="mat-toolbar" target="_blank" color="primary">
-    <h1>{{ headerTitle | uppercase }}</h1>
-  </a>
-</mat-toolbar>
+<mat-form-field *ngIf="(apiData | async)?.jobs; else loading" class="dop" appearance="fill">
+  <mat-label>Search</mat-label>
+  <input matInput placeholder="Type job title" [(ngModel)]="searchStr">
+</mat-form-field>
 
-<main class="example-button-row">
+<main class="card-text">
   <mat-card class="card">
-
-    <mat-form-field *ngIf="(apiData | async)?.jobs; else loading" class="example-full-width dop" appearance="fill">
-      <mat-label>Search</mat-label>
-      <input matInput placeholder="Type job title" [(ngModel)]="searchStr">
-    </mat-form-field>
-
-    <div  class="container-wrapper">
-      <div class="container" *ngFor="let job of ((apiData | async)?.jobs | searchJobs: searchStr) ">
+    <div class="container-wrapper">
+      <div *ngFor="let job of ((apiData | async)?.jobs | searchJobs: searchStr) index as id">
         <div class="item">
-          <mat-card-title>{{ job.title }}</mat-card-title>
-          <mat-card-subtitle><span class="indents">Category: {{ job.category }}</span></mat-card-subtitle>
-          <mat-card-subtitle><span class="indents">Location: {{ job.location }}</span></mat-card-subtitle>
-          <a mat-raised-button color="primary" href="{{job.url}}" target="_blank">Go to offer</a>
+          <mat-card-title><a [routerLink]="['/jobs/' + id]" [queryParams]="job">{{ job.title }}</a></mat-card-title>
+          <mat-card-subtitle><p class="row"><strong>Location: </strong>{{ job.location }}</p></mat-card-subtitle>
         </div>
       </div>
     </div>
-
   </mat-card>
 </main>
 
